@@ -174,3 +174,16 @@ RankingResult quickSelectRank(std::vector<Player>& players);
  * @post All elements of the stream are consumed (remaining() == 0).
  */
 RankingResult rankIncoming(PlayerStream& stream, const size_t& reporting_interval);
+
+// Compatibility aliases for starter-code namespace expectations.
+// This preserves the global API while also supporting calls like
+// Offline::heapRank(...) and Online::rankIncoming(...).
+namespace Offline {
+using ::heapRank;
+using ::quickSelectRank;
+}
+
+namespace Online {
+using ::replaceMin;
+using ::rankIncoming;
+}
